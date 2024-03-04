@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <script>
+        let operator;
+        let number1;
+        let number2;
+        let result;
+
+
+
+        function isNumeric(value) {
+            return !isNaN(parseFloat(value)) && isFinite(value);
+        }
+        operator = prompt('Choose operation type(+,-,*,/)');
+        if (operator === null) {
+            alert('Goodluck!');
+        } else {number1 = prompt('Enter first number:');
+            if (number1 === null || !isNumeric(number1)) {
+                alert('Use numbers only.');
+            } else { number1 = parseFloat(number1);
+
+                
+                number2 = prompt('Enter second number');
+                if (number2 === null || !isNumeric(number2)) {
+                    alert('Use number');
+                } else {
+                    number2 = parseFloat(number2);
+
+                    if (operator === '+') {
+                        result = number1 + number2;
+                    } else if (operator === '-') {
+                        result = number1 - number2;
+                    } else if (operator === '*') {
+                        result = number1 * number2;
+                    } else if (operator === '/') {
+                        result = number1 / number2;
+                    } else {
+                        alert('Operate');
+                    }
+                    if (result !== undefined) {
+                        alert(result);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
